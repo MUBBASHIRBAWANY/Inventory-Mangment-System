@@ -1,5 +1,10 @@
+# Build settings
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Redirect rules for Single Page Applications
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true # Forces redirect
