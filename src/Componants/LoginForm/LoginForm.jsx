@@ -3,9 +3,12 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const LoginForm = () => {
+  const notify2 = () => toast("User Email & Password");
+  
     const navigate = useNavigate();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     
@@ -26,6 +29,7 @@ const LoginForm = () => {
   uidisValid()
   
     const onSubmit = async (data )=> {
+      try{
         const res = await axios.post("https://mern-auth-liart.vercel.app/user/login",{
             email:data.email,
             password:data.password
@@ -37,10 +41,17 @@ const LoginForm = () => {
 
          navigate('/')
 
+      }
+      catch(err){
+        console.log(err)
+        notify2()
+      }
+
     }
 
   return (
     <div>
+      <ToastContainer />
       <section className="bg-gray-50 dark:bg-gray-900">
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
