@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Login from './Pages/Login/Login'
 import Signup from './Pages/Signup/Signup'
 import Home from './Pages/Home/Home'  
-import NotFound from './Pages/NotFound/NotFound'
+
 
 const App = () => {
   return (
@@ -11,8 +11,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/c" element={<Signup />} />
+        
       </Routes>
     </div>
   )
