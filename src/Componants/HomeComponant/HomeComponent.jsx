@@ -7,10 +7,10 @@ const HomeComponent = (data) => {
  const navigate = useNavigate();
       const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-
+const Cookies1 = Cookies()
 const logout = () =>{
     console.log("logout")
-    Cookies.remove("token")
+    Cookies1.remove("token")
     navigate("/login")
 }
 
